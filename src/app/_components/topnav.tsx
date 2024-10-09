@@ -34,7 +34,7 @@ export async function TopNav() {
   return (
     <nav className="sticky top-0 z-50 flex w-full items-center justify-between bg-black p-2 pl-4 pr-4 text-xl font-semibold text-white">
       <div className="flex items-center gap-8">
-        <Link href="/home">OpenMat</Link>
+        <Link href="/home">YourName</Link>
         <div className="hidden gap-8 sm:flex">
           <Link href="/about" className="text-sm">
             About
