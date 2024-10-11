@@ -64,7 +64,7 @@ export default function SignInPage() {
         className="w-80 rounded-2xl bg-white p-8 text-center"
         style={{ boxShadow: "0 4px 8px hsl(0, 0%, 70%)" }}
       >
-        <h2 className="mb-4 text-3xl">PokeTrades</h2>
+        <h2 className="mb-4 text-3xl">{process.env.NEXT_PUBLIC_APP_NAME}</h2>
         <h2 className="text-2xl">Sign In</h2>
         <div className="mt-4 flex flex-col items-center gap-4">
           <form

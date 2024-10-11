@@ -8,6 +8,7 @@ import {
   DropdownMenuTrigger,
 } from "~/components/ui/dropdown-menu";
 import { auth } from "../api/auth/authConfig";
+import { ThemeSwitcher } from "./ThemeSwitcher";
 
 export function Hamburger() {
   return (
@@ -28,13 +29,13 @@ export function Hamburger() {
   );
 }
 
-export async function TopNav() {
+export async function NavBar() {
   const session = await auth();
 
   return (
-    <nav className="sticky top-0 z-50 flex w-full items-center justify-between bg-black p-2 pl-4 pr-4 text-xl font-semibold text-white">
+    <nav className="sticky top-0 z-50 flex w-full items-center justify-between p-2 pl-4 pr-4 text-xl font-semibold">
       <div className="flex items-center gap-8">
-        <Link href="/home">YourName</Link>
+        <Link href="/home">{process.env.NEXT_PUBLIC_APP_NAME}</Link>
         <div className="hidden gap-8 sm:flex">
           <Link href="/about" className="text-sm">
             About
@@ -75,7 +76,8 @@ export async function TopNav() {
         </DropdownMenu>
       </div>
       <div className="hidden sm:block">
-        <div className="mt-4 sm:mt-0">
+        <div className="mt-4 flex gap-4 sm:mt-0">
+          <ThemeSwitcher />
           {session?.user ? <SignOutButton /> : <SignInButton />}
         </div>
       </div>
