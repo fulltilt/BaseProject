@@ -31,8 +31,8 @@ export default function RootLayout({
           <NextTopLoader />
           <ThemeProvider
             attribute="class"
-            // defaultTheme="system"
-            // enableSystem
+            defaultTheme="system"
+            enableSystem
             disableTransitionOnChange
           >
             <div className="grid min-h-screen grid-rows-[auto,1fr]">

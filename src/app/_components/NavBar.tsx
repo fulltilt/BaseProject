@@ -49,31 +49,34 @@ export async function NavBar() {
         </div>
       </div>
       <div className="sm:hidden">
-        <DropdownMenu>
-          <DropdownMenuTrigger>
-            <Hamburger />
-          </DropdownMenuTrigger>
-          <DropdownMenuContent>
-            <DropdownMenuItem>
-              <Link href="/about" className="text-sm">
-                About
-              </Link>
-            </DropdownMenuItem>
-            <DropdownMenuItem>
-              <Link
-                href="https://www.paypal.com/donate/?hosted_button_id=ZCDZKZW4JE5LG"
-                className="text-sm"
-              >
-                Donate
-              </Link>
-            </DropdownMenuItem>
-            <DropdownMenuItem>
-              <div className="mt-4 sm:mt-0">
-                {session?.user ? <SignOutButton /> : <SignInButton />}
-              </div>
-            </DropdownMenuItem>
-          </DropdownMenuContent>
-        </DropdownMenu>
+        <div className="flex gap-4">
+          <ThemeSwitcher />
+          <DropdownMenu>
+            <DropdownMenuTrigger>
+              <Hamburger />
+            </DropdownMenuTrigger>
+            <DropdownMenuContent>
+              <DropdownMenuItem>
+                <Link href="/about" className="text-sm">
+                  About
+                </Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem>
+                <Link
+                  href="https://www.paypal.com/donate/?hosted_button_id=ZCDZKZW4JE5LG"
+                  className="text-sm"
+                >
+                  Donate
+                </Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem>
+                <div className="mt-4 sm:mt-0">
+                  {session?.user ? <SignOutButton /> : <SignInButton />}
+                </div>
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
+        </div>
       </div>
       <div className="hidden sm:block">
         <div className="mt-4 flex gap-4 sm:mt-0">
